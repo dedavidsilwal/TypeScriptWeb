@@ -1,5 +1,9 @@
 ﻿import { IHttpService } from './httpservice';
 
+export interface Name{
+    name: string;
+}
+
 export class Search {
     constructor(private http: IHttpService) { }
 
@@ -7,4 +11,5 @@ export class Search {
         return this.http.get('https://jsonplaceholder.typicode.com/posts/1')
             .then(json => json.toString());
     }
+
 }

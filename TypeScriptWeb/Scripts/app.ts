@@ -1,21 +1,24 @@
 ﻿import { Search } from './search';
 import { FetchHttpService } from './httpservice';
 
+
 window.onload = () => {
 
     let clickmebtton = document.getElementById("button");
 
-    let result = <HTMLElement>document.querySelector('.result');
+    let resultElement = <HTMLElement>document.querySelector('.result');
 
     let search = new Search(new FetchHttpService());
 
-    clickmebtton.onclick = () =>
-        search.search().then(res => {
-            debugger;
-            result.innerHTML = res.toString();
-        });
+
+    clickmebtton.onclick = async () => {
+
+        const result = await search.search();
+
+        resultElement.innerHTML = result.toString();     
 
         console.log('clicked');
 
-}
+    }
 
+}

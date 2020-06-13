@@ -45,19 +45,10 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/systemjs/system.js"></script>
 
-    <script src="~/lib/systemjs/system.js">
-        System.config({
-            baseURL: "/js/",
-            packages: {
-                "/": {
-                    defaultExtension: "js"
-                }
-            }
+    <script>System.import('/Scripts/app.js');</script>
 
-        });
-        System.import("app");
-    </script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

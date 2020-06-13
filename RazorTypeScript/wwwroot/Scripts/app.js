@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -35,25 +34,22 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var search_1 = require("./search");
-var httpservice_1 = require("./httpservice");
-window.onload = function () {
-    var clickmebtton = document.getElementById("button");
-    var resultElement = document.querySelector('.result');
-    var search = new search_1.Search(new httpservice_1.FetchHttpService());
-    clickmebtton.onclick = function () { return __awaiter(void 0, void 0, void 0, function () {
-        var result;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, search.search()];
-                case 1:
-                    result = _a.sent();
-                    resultElement.innerHTML = result.toString();
-                    console.log('clicked');
-                    return [2 /*return*/];
-            }
-        });
-    }); };
-};
+var _this = this;
+var clickmebtton = document.getElementById("button");
+clickmebtton.onclick = function () { return __awaiter(_this, void 0, void 0, function () {
+    function getResult() {
+        return fetch('https://jsonplaceholder.typicode.com/posts/1').then(function (result) { return result.json().toString(); });
+    }
+    var result;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0: return [4 /*yield*/, getResult()];
+            case 1:
+                result = _a.sent();
+                document.getElementById("ts-example").innerHTML = result;
+                console.log('clicked');
+                return [2 /*return*/];
+        }
+    });
+}); };
 //# sourceMappingURL=app.js.map
