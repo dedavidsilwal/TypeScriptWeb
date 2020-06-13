@@ -1,6 +1,7 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
+    "outDir": "./wwwroot/js",
     "noImplicitAny": false,
     "noEmitOnError": true,
     "removeComments": false,

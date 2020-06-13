@@ -4,7 +4,7 @@
     <TargetFramework>netcoreapp5.0</TargetFramework>
     <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
       <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
-      <TypeScriptToolsVersion>3.9</TypeScriptToolsVersion>
+      <TypeScriptToolsVersion>3.8</TypeScriptToolsVersion>
   </PropertyGroup>
 
 
