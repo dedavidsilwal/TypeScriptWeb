@@ -1,5 +1,4 @@
 ﻿const path = require('path');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -10,7 +9,7 @@ module.exports = (env, agrs) => {
     return {
         mode: isProdMode ? 'production' : 'development',
         entry: {
-            app: './TypeScripts/app.ts'        
+            app: './Scripts/app.ts'        
         },
         resolve: {
             extensions: ['.ts', '.js']
